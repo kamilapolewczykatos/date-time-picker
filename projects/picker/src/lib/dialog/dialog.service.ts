@@ -29,7 +29,6 @@ import {
 import {
     ComponentPortal,
     ComponentType,
-    PortalInjector
 } from '@angular/cdk/portal';
 
 export const OWL_DIALOG_DATA = new InjectionToken<any>('OwlDialogData');
@@ -233,20 +232,35 @@ export class OwlDialogService {
         dialogRef: OwlDialogRef<T>,
         dialogContainer: OwlDialogContainerComponent
     ) {
+
         const userInjector =
-            config &&
-            config.viewContainerRef &&
-            config.viewContainerRef.injector;
-        const injectionTokens = new WeakMap();
+        config?.viewContainerRef?.injector;
+      
+      const providers = [
+        { provide: OwlDialogRef, useValue: dialogRef },
+        { provide: OwlDialogContainerComponent, useValue: dialogContainer },
+        { provide: OWL_DIALOG_DATA, useValue: config?.data },
+      ];
+      
+      return Injector.create({
+        providers,
+        parent: userInjector || this.injector,
+      });
+              
+        // const userInjector =
+        //     config &&
+        //     config.viewContainerRef &&
+        //     config.viewContainerRef.injector;
+        // const injectionTokens = new WeakMap();
 
-        injectionTokens.set(OwlDialogRef, dialogRef);
-        injectionTokens.set(OwlDialogContainerComponent, dialogContainer);
-        injectionTokens.set(OWL_DIALOG_DATA, config.data);
+        // injectionTokens.set(OwlDialogRef, dialogRef);
+        // injectionTokens.set(OwlDialogContainerComponent, dialogContainer);
+        // injectionTokens.set(OWL_DIALOG_DATA, config.data);
 
-        return new PortalInjector(
-            userInjector || this.injector,
-            injectionTokens
-        );
+        // return new PortalInjector(
+        //     userInjector || this.injector,
+        //     injectionTokens
+        // );
     }
 
     private createOverlay(config: OwlDialogConfigInterface): OverlayRef {
