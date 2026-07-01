@@ -1,7 +1,7 @@
 {
-    "name": "@danielmoncada/angular-datetime-picker",
-    "version": "20.0.1",
-    "description": "Angular Date Time Picker",
+    "name": "gibi-angular-datetime-picker-2",
+    "version": "22.0.0",
+    "description": "GIBI Angular Date Time Picker",
     "keywords": [
         "Angular",
         "datepicker",
@@ -13,23 +13,23 @@
         "material",
         "ngx"
     ],
-    "author": "Maintained and updated by Daniel Moncada, original implementatiom by Daniel Pan",
+    "author": "Maintained and updated by GIBI Team, based on Daniel Moncada, original implementatiom by Daniel Pan",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/danielmoncada/date-time-picker.git"
+        "url": "https://github.com/bernard-kacprzak-atos/date-time-picker.git"
     },
-    "homepage": "https://github.com/danielmoncada/date-time-picker",
+    "homepage": "https://github.com/bernard-kacprzak-atos/date-time-picker",
     "publishConfig": {
         "access": "public"
     },
     "peerDependencies": {
-        "@angular/common": "^19.0.0 || ^20.0.0",
-        "@angular/core": "^19.0.0 || ^20.0.0",
-        "@angular/cdk": "^19.0.0 || ^20.0.0"
+        "@angular/common": "^22.0.0",
+        "@angular/core": "^22.0.0",
+        "@angular/cdk": "^22.0.0"
     },
     "dependencies": {
-        "tslib": "^2.6.2"
+        "tslib": "^2.8.1"
     },
     "exports": {
         "./assets/style/picker.min.css": {

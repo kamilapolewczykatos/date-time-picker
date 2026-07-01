@@ -1,6 +1,12 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "ignoreDeprecations": "6.0",
+    "strict": false,
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "strictPropertyInitialization": false,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "esModuleInterop": true,

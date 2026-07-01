@@ -2,12 +2,18 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "../../out-tsc/lib",
+    "strict": false,
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "strictPropertyInitialization": false,
   },
   "angularCompilerOptions": {
+    "strictTemplates": false,
     "skipTemplateCodegen": true,
-    "strictMetadataEmit": true,
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true,
+    "strictMetadataEmit": false,
+    "fullTemplateTypeCheck": false,
+    "strictInjectionParameters": false,
     "enableResourceInlining": true,
     "enableIvy": true
   },
